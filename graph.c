@@ -52,20 +52,21 @@ void addNode(Graph* grafo, const char* label) {
     map_insert(grafo->adjacencyMap, label_copy, edges_list);
 }
 
-void addEdge(Graph* grafo, const char* src, const char* dest, int weight) {
-    if (!grafo || !src || !dest) return;
-    List* edges = (List*) map_search(grafo->adjacencyMap, (void*)src);
-    if (!edges) return;
+void addEdge(Graph* graph, const char* sourceLabel, const char* destinationLabel, int weight) {
+    if (!graph || !sourceLabel || !destinationLabel) return;
+    MapPair* node_pair = map_search(graph->adjacencyMap, (void*)sourceLabel);
+    if (!node_pair) return
+    List* adjacency_list = (List*) node_pair->value;
     Edge* new_edge = (Edge*) malloc(sizeof(Edge));
     if (!new_edge) return;
-    new_edge->weight = weight;
-    new_edge->target = strdup(dest);
+
+    new_edge->target = strdup(destinationLabel);
     if (!new_edge->target) {
         free(new_edge);
         return;
     }
-    list_pushBack(edges, new_edge);
-
+    new_edge->weight = weight;
+    list_pushBack(adjacency_list, new_edge);
 }
 
 List* getEdges(Graph* grafo, const char* label) {
