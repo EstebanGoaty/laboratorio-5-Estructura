@@ -55,7 +55,7 @@ void addNode(Graph* grafo, const char* label) {
 void addEdge(Graph* graph, const char* sourceLabel, const char* destinationLabel, int weight) {
     if (!graph || !sourceLabel || !destinationLabel) return;
     MapPair* node_pair = map_search(graph->adjacencyMap, (void*)sourceLabel);
-    if (!node_pair) return;
+    if (!node_pair) return
     List* adjacency_list = (List*) node_pair->value;
     Edge* new_edge = (Edge*) malloc(sizeof(Edge));
     if (!new_edge) return;
@@ -71,8 +71,11 @@ void addEdge(Graph* graph, const char* sourceLabel, const char* destinationLabel
 
 List* getEdges(Graph* grafo, const char* label) {
     if (!grafo || !label) return NULL;
+    MapPair* pair
+    pair = map_search(graph->adjacencyMap, (void*)label);
+    if (!pair) return NULL;
 
-    return NULL;
+    return (List*) pair->value
 }
 
 int getWeight(Graph* grafo, const char* label1, const char* label2) {
