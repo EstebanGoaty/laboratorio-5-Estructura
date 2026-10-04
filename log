@@ -37,3 +37,14 @@ Sun Oct  4 11:37:28 PM UTC 2026:
  1 file changed, 6 insertions(+)
  tests:  0|0
 437e934
+Sun Oct  4 11:39:38 PM UTC 2026: 
+ graph.c | 15 +++++++++------
+ 1 file changed, 9 insertions(+), 6 deletions(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addNode’:
+graph.c:52:16: error: ‘g’ undeclared (first use in this function)
+   52 |     map_insert(g->adjacencyMap, label_copy, edges_list);
+      |                ^
+graph.c:52:16: note: each undeclared identifier is reported only once for each function it appears in
+0d22504
