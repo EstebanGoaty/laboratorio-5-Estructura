@@ -72,7 +72,7 @@ void addEdge(Graph* graph, const char* sourceLabel, const char* destinationLabel
 List* getEdges(Graph* grafo, const char* label) {
     if (!grafo || !label) return NULL;
     MapPair* pair;
-    pair = map_search(graph->adjacencyMap, (void*)label);
+    pair = map_search(grafo->adjacencyMap, (void*)label);
     if (!pair) return NULL;
 
     return (List*) pair->value;

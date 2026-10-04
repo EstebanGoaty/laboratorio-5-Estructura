@@ -147,3 +147,21 @@ graph.c:75:23: error: ‘graph’ undeclared (first use in this function); did y
       |                       ^~~~~
       |                       Graph
 df17b61
+Sun Oct  4 11:56:57 PM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addEdge’:
+graph.c:59:5: error: expected expression before ‘List’
+   59 |     List* adjacency_list = (List*) node_pair->value;
+      |     ^~~~
+graph.c:59:5: error: ‘return’ with a value, in function returning void [-Wreturn-mismatch]
+graph.c:55:6: note: declared here
+   55 | void addEdge(Graph* graph, const char* sourceLabel, const char* destinationLabel, int weight) {
+      |      ^~~~~~~
+graph.c:69:19: error: ‘adjacency_list’ undeclared (first use in this function)
+   69 |     list_pushBack(adjacency_list, new_edge);
+      |                   ^~~~~~~~~~~~~~
+graph.c:69:19: note: each undeclared identifier is reported only once for each function it appears in
+58bea20
