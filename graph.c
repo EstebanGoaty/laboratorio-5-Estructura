@@ -82,7 +82,7 @@ int getWeight(Graph* grafo, const char* label1, const char* label2) {
 }
 
 // Retorna una nueva List* que contiene elementos de tipo char* (las etiquetas)
-List* getAdjacentLabels(Graph* g, const char* label) {
+List* getAdjacentLabels(Graph* grafo, const char* label) {
     if (!grafo || !label) return NULL;
 
 
