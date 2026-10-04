@@ -60,7 +60,7 @@ List* getAdjacentLabels(Graph* g, const char* label) {
 
     return NULL; 
 }
-
+//hasta acá hay k programar we
 void destroyGraph(Graph* g) {
     if (!g) return;
 
