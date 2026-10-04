@@ -49,7 +49,7 @@ void addNode(Graph* grafo, const char* label) {
         free(label_copy);
         return;
     }
-    map_insert(g->adjacencyMap, label_copy, edges_list);
+    map_insert(grafo->adjacencyMap, label_copy, edges_list);
 }
 
 void addEdge(Graph* grafo, const char* src, const char* dest, int weight) {
@@ -68,14 +68,14 @@ void addEdge(Graph* grafo, const char* src, const char* dest, int weight) {
 
 }
 
-List* getEdges(Graph* g, const char* label) {
-    if (!g || !label) return NULL;
+List* getEdges(Graph* grafo, const char* label) {
+    if (!grafo || !label) return NULL;
 
     return NULL;
 }
 
-int getWeight(Graph* g, const char* label1, const char* label2) {
-    if (!g || !label1 || !label2) return -1;
+int getWeight(Graph* grafo, const char* label1, const char* label2) {
+    if (!grafo || !label1 || !label2) return -1;
 
     // Si no existe el origen o terminamos de iterar sin encontrar el destino
     return -1; 
@@ -83,7 +83,7 @@ int getWeight(Graph* g, const char* label1, const char* label2) {
 
 // Retorna una nueva List* que contiene elementos de tipo char* (las etiquetas)
 List* getAdjacentLabels(Graph* g, const char* label) {
-    if (!g || !label) return NULL;
+    if (!grafo || !label) return NULL;
 
 
     return NULL; 
