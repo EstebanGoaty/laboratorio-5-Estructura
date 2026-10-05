@@ -95,8 +95,10 @@ int getWeight(Graph* grafo, const char* label1, const char* label2) {
 List* getAdjacentLabels(Graph* grafo, const char* label) {
     if (!grafo || !label) return NULL;
 
-
-    return NULL; 
+    for (Edge* e = list_first(edges); e != NULL; e = list_next(edges)) {
+        list_pushBack(labels, e->target);
+    }
+    return labels;
 }
 //hasta acá hay k programar we
 void destroyGraph(Graph* g) {
