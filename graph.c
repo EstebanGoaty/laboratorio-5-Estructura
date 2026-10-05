@@ -80,7 +80,13 @@ List* getEdges(Graph* grafo, const char* label) {
 
 int getWeight(Graph* grafo, const char* label1, const char* label2) {
     if (!grafo || !label1 || !label2) return -1;
+    List* edges = getEdges(grafo, label1);
+    if (!edges) return -1;
 
+    for (Edge* e = list_first(edges); e != NULL; e = list_next(edges)) {
+        if (strcmp(e->target, label2) == 0)
+            return e->weight;
+    }
     // Si no existe el origen o terminamos de iterar sin encontrar el destino
     return -1; 
 }
