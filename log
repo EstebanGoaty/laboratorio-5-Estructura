@@ -214,3 +214,32 @@ graph.c:102:1: error: control reaches end of non-void function [-Werror=return-t
       | ^
 cc1: all warnings being treated as errors
 cd86dfe
+Mon Oct  5 12:14:36 AM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getAdjacentLabels’:
+graph.c:98:31: error: ‘edges’ undeclared (first use in this function)
+   98 |     for (Edge* e = list_first(edges); e != NULL; e = list_next(edges)) {
+      |                               ^~~~~
+graph.c:98:31: note: each undeclared identifier is reported only once for each function it appears in
+graph.c:99:23: error: passing argument 1 of ‘list_pushBack’ from incompatible pointer type [-Wincompatible-pointer-types]
+   99 |         list_pushBack(label, e->target);
+      |                       ^~~~~
+      |                       |
+      |                       const char *
+In file included from graph.h:4,
+                 from graph.c:6:
+list.h:20:26: note: expected ‘List *’ but argument is of type ‘const char *’
+   20 | void list_pushBack(List *L, void *dato);
+      |                    ~~~~~~^
+graph.c:101:12: error: ‘labels’ undeclared (first use in this function); did you mean ‘label’?
+  101 |     return labels;
+      |            ^~~~~~
+      |            label
+graph.c:102:1: error: control reaches end of non-void function [-Werror=return-type]
+  102 | }
+      | ^
+cc1: all warnings being treated as errors
+5e1229c
