@@ -96,9 +96,9 @@ List* getAdjacentLabels(Graph* grafo, const char* label) {
     if (!grafo || !label) return NULL;
 
     for (Edge* e = list_first(edges); e != NULL; e = list_next(edges)) {
-        list_pushBack(label, e->target);
+        list_pushBack(labels, e->target);
     }
-    return labels;
+    return label;
 }
 //hasta acá hay k programar we
 void destroyGraph(Graph* g) {
